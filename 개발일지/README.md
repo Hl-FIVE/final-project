@@ -60,7 +60,7 @@
      - 이용민: 회사소개
      - 정지은: 근태관리
 - 프로그램 로고 제작
-    - 
+    - ![하이워크로고](https://user-images.githubusercontent.com/68311263/97892966-0c050700-1d74-11eb-9449-ae3dbeb69432.png)
 
      
 
