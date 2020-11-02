@@ -60,6 +60,10 @@
      - 이용민: 회사소개
      - 정지은: 근태관리
 - 프로그램 로고 제작
+    - x-special/nautilus-clipboard
+copy
+file:///home/thkim/%EB%B0%94%ED%83%95%ED%99%94%EB%A9%B4/%ED%95%98%EC%9D%B4%EC%9B%8C%ED%81%AC%EB%A1%9C%EA%B3%A0.png
+
      
 
 ### 프로젝트 멤버
