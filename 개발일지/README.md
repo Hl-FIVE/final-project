@@ -14,7 +14,7 @@
 
 ### 팀 과제 일지
 
-**1일차(2020-10-28,수)**
+##### 1일차(2020-10-28,수)
 
 - 조 이름 정하기
   - 'Hl-FIVE'      
@@ -61,7 +61,7 @@
     - 신소미: 캘린더 
     - 이용민: 회사소개
     - 정지은: 근태관리
-- [하이워크로고](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%ED%95%98%EC%9D%B4%EC%9B%8C%ED%81%AC_%EB%A1%9C%EA%B3%A0.png) 제작
+- [하이워크 로고](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%ED%95%98%EC%9D%B4%EC%9B%8C%ED%81%AC_%EB%A1%9C%EA%B3%A0.png) 제작
   
 **5일차 ~ 7일차 (2020-11-03,화 ~ 2020-11-05,목)**
 
