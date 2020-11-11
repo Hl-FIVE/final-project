@@ -102,7 +102,7 @@
 
 - UI 수정 사항
   - 인사관리: 직원 비밀번호 초기화 화면 추가 
-  - [UI 최종본](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/UI_%EC%88%98%EC%A0%95_%EB%B0%8F_%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD.pdf)
+  - [UI 최종본](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%ED%95%98%EC%9D%B4%EC%9B%8C%ED%81%AC_UI.fig)
   
 
 ### 프로젝트 멤버
