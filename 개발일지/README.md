@@ -20,33 +20,33 @@
   - 'Hl-FIVE'      
 - 주제 회의
   - [아이디어 제안서](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20%EC%B4%88%EA%B8%B0%20%EA%B5%AC%EC%83%81/%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4%20%EC%A0%9C%EC%95%88%EC%84%9C.pdf)
-  - 김유아 : 지식 공유 커뮤니티 사이트
-  - 김태희 : 공기업 취준생을 위한 웹 사이트
-  - 신소미 : 여행 정보 사이트
-  - 정지은 : 종합 업무 프로그램
-  - 이용민 : 개발자를 위한 스터디 모집 및 구직 웹사이트
+    - 김유아 : 지식 공유 커뮤니티 사이트
+    - 김태희 : 공기업 취준생을 위한 웹 사이트
+    - 신소미 : 여행 정보 사이트
+    - 정지은 : 종합 업무 프로그램
+    - 이용민 : 개발자를 위한 스터디 모집 및 구직 웹사이트
   
 **2일차(2020-10-29,목)**
 
 - 최종 주제 선정
   - 종합 업무 프로그램 
-- 구현 기능 구상
+- 기능 구상 회의
 
 **3일차(2020-10-30,금)**
 
 - UI 회의
   - 카카오 오븐을 활용한 UI 제작
-   - UI 주말과제
-     - 김유아: 채팅
-     - 김태희: 게시판
-     - 신소미: 캘린더
-     - 정지은: 로그인
-     - 이용민: 사내조직도
-   - 홈화면 UI 회의
-     - 로그인 화면
-     - 공지사항 게시판
-     - 연차 정보 
-     - 캘린더
+    - UI 주말과제
+      - 김유아: 채팅
+      - 김태희: 게시판
+      - 신소미: 캘린더
+      - 정지은: 로그인
+      - 이용민: 사내조직도
+    - 홈화면 UI 회의
+      - 로그인 화면
+      - 공지사항 게시판
+      - 연차 정보 
+      - 캘린더
 - 프로그램 이름 정하기
   - '하이워크'  
 
@@ -55,12 +55,12 @@
 - 프로그램 아이디어 발표(정지은, 김태희)
   - [주제 발표.pptx](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%20%EC%B4%88%EA%B8%B0%20%EA%B5%AC%EC%83%81/%EC%A3%BC%EC%A0%9C_%EB%B0%9C%ED%91%9C.pptx)
 - UI 화면 구성 회의
-   - UI 분담 결과
-     - 김유아: 채팅
-     - 김태희: 사내게시판
-     - 신소미: 캘린더 
-     - 이용민: 회사소개
-     - 정지은: 근태관리
+  - UI 분담 결과
+    - 김유아: 채팅
+    - 김태희: 사내게시판
+    - 신소미: 캘린더 
+    - 이용민: 회사소개
+    - 정지은: 근태관리
 - [하이워크로고](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%ED%95%98%EC%9D%B4%EC%9B%8C%ED%81%AC_%EB%A1%9C%EA%B3%A0.png) 제작
   
 **5일차 ~ 7일차 (2020-11-03,화 ~ 2020-11-05,목)**
@@ -82,12 +82,16 @@
 
 - UI 화면 발표(이용민)
 
-**12일차(2020-11-11,수)**
+**12일차(2020-11-10,화)**
+
+- UI 화면 구성 논의
+  - [UI 수정 및 변경사항](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/UI_%EC%88%98%EC%A0%95_%EB%B0%8F_%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD.pdf)
+
+**13일차(2020-11-11,수)**
 
 - UI 수정 사항
-   - 인사관리: 직원 비밀번호 초기화 화면 추가 
-   - [UI 수정 및 변경사항](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/UI_%EC%88%98%EC%A0%95_%EB%B0%8F_%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD.pdf)
-   - [UI 최종본](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/UI_%EC%88%98%EC%A0%95_%EB%B0%8F_%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD.pdf)
+  - 인사관리: 직원 비밀번호 초기화 화면 추가 
+  - [UI 최종본](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/%ED%99%94%EB%A9%B4%20%EC%9D%B4%EB%AF%B8%EC%A7%80/UI_%EC%88%98%EC%A0%95_%EB%B0%8F_%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD.pdf)
   
 
 ### 프로젝트 멤버
