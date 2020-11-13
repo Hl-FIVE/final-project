@@ -107,6 +107,11 @@
 **14일차(2020-11-12,목)**
 
 - [UI 화면 기능 설명서](https://github.com/Hl-FIVE/final-project/blob/main/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80/UI%20%EA%B5%AC%EC%83%81/UI_%ED%99%94%EB%A9%B4_%EA%B8%B0%EB%8A%A5_%EC%84%A4%EB%AA%85%EC%84%9C.pdf)
+
+**15일차(2020-11-13,금)**
+
+- UI 수정 화면 발표(이용민)
+- DB Modeling 구 회의
   
 
 ### 프로젝트 멤버
