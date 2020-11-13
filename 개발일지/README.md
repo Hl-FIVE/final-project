@@ -112,4 +112,4 @@
 
 - UI 수정 화면 발표(이용민)
 - DB Modeling 구성 회의
-
+  - public.exerd 파일 생성
