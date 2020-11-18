@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS cms_cmtInfo RESTRICT;
 DROP TABLE IF EXISTS cms_cRoom RESTRICT;
 
 -- 일정
-DROP TABLE IF EXISTS cms_calendar RESTRICT;
+DROP TABLE IF EXISTS cms_calender RESTRICT;
 
 -- 게시판
 DROP TABLE IF EXISTS cms_board RESTRICT;
@@ -40,7 +40,7 @@ DROP TABLE IF EXISTS cms_cGroup RESTRICT;
 -- 게시글 정보
 CREATE TABLE cms_bList (
   bNo      INTEGER     NOT NULL COMMENT '게시글번호', -- 게시글번호
-  COL      INTEGER     NOT NULL COMMENT '게시판번호', -- 게시판번호
+  bNo2     INTEGER     NOT NULL COMMENT '게시판번호', -- 게시판번호
   wNo      INTEGER     NOT NULL COMMENT '사원 번호', -- 사원 번호
   title    VARCHAR(50) NOT NULL COMMENT '제목', -- 제목
   regiDate DATE        NOT NULL COMMENT '등록일', -- 등록일
@@ -158,7 +158,7 @@ CREATE UNIQUE INDEX UIX_cms_auth
 
 -- 휴가 신청
 CREATE TABLE cms_vApp (
-  COL   INTEGER     NOT NULL COMMENT '휴가신청번호', -- 휴가신청번호
+  vNo   INTEGER     NOT NULL COMMENT '휴가신청번호', -- 휴가신청번호
   vCode VARCHAR(20) NOT NULL COMMENT '휴가 코드', -- 휴가 코드
   wNo   INTEGER     NOT NULL COMMENT '사원 번호', -- 사원 번호
   adt   DATE        NOT NULL COMMENT '신청일', -- 신청일
@@ -174,7 +174,7 @@ COMMENT '휴가 신청';
 ALTER TABLE cms_vApp
   ADD CONSTRAINT PK_cms_vApp -- 휴가 신청 기본키
     PRIMARY KEY (
-      COL -- 휴가신청번호
+      vNo -- 휴가신청번호
     );
 
 -- 휴가 종류 
@@ -193,13 +193,13 @@ ALTER TABLE cms_vKind
 
 -- 댓글 정보
 CREATE TABLE cms_cmtInfo (
-  cCode VARCHAR(20) NOT NULL COMMENT '댓글 코드', -- 댓글 코드
-  bNo   INTEGER     NOT NULL COMMENT '게시글번호', -- 게시글번호
-  COL3  INTEGER     NOT NULL COMMENT '순서', -- 순서
-  COL4  INTEGER     NOT NULL COMMENT '단계', -- 단계
-  COL   MEDIUMTEXT  NOT NULL COMMENT '내용', -- 내용
-  rd    DATE        NOT NULL COMMENT '등록일', -- 등록일
-  wNo   INTEGER     NOT NULL COMMENT '사원 번호' -- 사원 번호
+  cCode   VARCHAR(20) NOT NULL COMMENT '댓글 코드', -- 댓글 코드
+  bNo     INTEGER     NOT NULL COMMENT '게시글번호', -- 게시글번호
+  list    INTEGER     NOT NULL COMMENT '순서', -- 순서
+  stage   INTEGER     NOT NULL COMMENT '단계', -- 단계
+  content MEDIUMTEXT  NOT NULL COMMENT '내용', -- 내용
+  rdt     DATE        NOT NULL COMMENT '등록일', -- 등록일
+  wNo     INTEGER     NOT NULL COMMENT '사원 번호' -- 사원 번호
 )
 COMMENT '댓글 정보';
 
@@ -226,7 +226,7 @@ ALTER TABLE cms_cRoom
     );
 
 -- 일정
-CREATE TABLE cms_calendar (
+CREATE TABLE cms_calender (
   calCode VARCHAR(20)  NOT NULL COMMENT '일정코드', -- 일정코드
   wNo     INTEGER      NOT NULL COMMENT '사원 번호', -- 사원 번호
   title   VARCHAR(50)  NOT NULL COMMENT '제목', -- 제목
@@ -238,16 +238,16 @@ CREATE TABLE cms_calendar (
 COMMENT '일정';
 
 -- 일정
-ALTER TABLE cms_calendar
-  ADD CONSTRAINT PK_cms_calendar -- 일정 기본키
+ALTER TABLE cms_calender
+  ADD CONSTRAINT PK_cms_calender -- 일정 기본키
     PRIMARY KEY (
       calCode -- 일정코드
     );
 
 -- 게시판
 CREATE TABLE cms_board (
-  COL  INTEGER     NOT NULL COMMENT '게시판번호', -- 게시판번호
-  COL2 VARCHAR(50) NOT NULL COMMENT '게시판명' -- 게시판명
+  bNo   INTEGER     NOT NULL COMMENT '게시판번호', -- 게시판번호
+  bName VARCHAR(50) NOT NULL COMMENT '게시판명' -- 게시판명
 )
 COMMENT '게시판';
 
@@ -255,17 +255,17 @@ COMMENT '게시판';
 ALTER TABLE cms_board
   ADD CONSTRAINT PK_cms_board -- 게시판 기본키
     PRIMARY KEY (
-      COL -- 게시판번호
+      bNo -- 게시판번호
     );
 
 -- 대화
 CREATE TABLE cms_chat (
-  COL       INTEGER     NOT NULL COMMENT '대화번호', -- 대화번호
+  cNo       INTEGER     NOT NULL COMMENT '대화번호', -- 대화번호
   wNo       INTEGER     NOT NULL COMMENT '사원 번호', -- 사원 번호
-  gChatCode VARCHAR(20) NOT NULL COMMENT '대화방번호', -- 대화방번호
-  COL2      MEDIUMTEXT  NOT NULL COMMENT '메시지', -- 메시지
-  COL4      VARCHAR(50) NOT NULL COMMENT '메시지유형', -- 메시지유형
-  COL3      DATE        NOT NULL COMMENT '생성일' -- 생성일
+  gChatCode INTEGER     NOT NULL COMMENT '대화방번호', -- 대화방번호
+  cContent  MEDIUMTEXT  NOT NULL COMMENT '메시지', -- 메시지
+  cName     VARCHAR(50) NOT NULL COMMENT '메시지유형', -- 메시지유형
+  cDate     DATE        NOT NULL COMMENT '생성일' -- 생성일
 )
 COMMENT '대화';
 
@@ -273,13 +273,13 @@ COMMENT '대화';
 ALTER TABLE cms_chat
   ADD CONSTRAINT PK_cms_chat -- 대화 기본키
     PRIMARY KEY (
-      COL -- 대화번호
+      cNo -- 대화번호
     );
 
 -- 대화방참여자
 CREATE TABLE cms_cGroup (
-  wNo       INTEGER     NOT NULL COMMENT '사원 번호', -- 사원 번호
-  gChatCode VARCHAR(20) NOT NULL COMMENT '대화방번호' -- 대화방번호
+  wNo       INTEGER NOT NULL COMMENT '사원 번호', -- 사원 번호
+  gChatCode INTEGER NOT NULL COMMENT '대화방번호' -- 대화방번호
 )
 COMMENT '대화방참여자';
 
@@ -295,10 +295,10 @@ ALTER TABLE cms_cGroup
 ALTER TABLE cms_bList
   ADD CONSTRAINT FK_cms_board_TO_cms_bList -- 게시판 -> 게시글 정보
     FOREIGN KEY (
-      COL -- 게시판번호
+      bNo2 -- 게시판번호
     )
     REFERENCES cms_board ( -- 게시판
-      COL -- 게시판번호
+      bNo -- 게시판번호
     );
 
 -- 게시글 정보
@@ -382,8 +382,8 @@ ALTER TABLE cms_cmtInfo
     );
 
 -- 일정
-ALTER TABLE cms_calendar
-  ADD CONSTRAINT FK_cms_worker_TO_cms_calendar -- 사원 -> 일정
+ALTER TABLE cms_calender
+  ADD CONSTRAINT FK_cms_worker_TO_cms_calender -- 사원 -> 일정
     FOREIGN KEY (
       wNo -- 사원 번호
     )
@@ -422,8 +422,6 @@ ALTER TABLE cms_cGroup
     REFERENCES cms_cRoom ( -- 대화방
       gChatCode -- 대화방번호
     );
-    
-    
     
 -- 권한 예제데이터
 insert into cms_auth(aCode, name)
