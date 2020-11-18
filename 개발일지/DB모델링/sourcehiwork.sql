@@ -425,17 +425,17 @@ ALTER TABLE cms_cGroup
     
 -- 권한 예제데이터
 insert into cms_auth(aCode, name)
-values('0', '사원');
+values(0, '사원');
 
 insert into cms_auth(aCode, name)
-values('1', '인사');
+values(1, '인사');
 
 insert into cms_auth(aCode, name)
-values('9', '관리자');
+values(9, '관리자');
 
 -- 회사정보 예제데이터
 insert into cms_cInfo(crNo, cName, map, postNo, addr, tel, fax)
-values('1248100998', '하이워크', '1', '1234', '서울특별시 서초구 신논현', '02-1111-1111', '02-3333-3333');
+values(1248100998, '하이워크', '1', '1234', '서울특별시 서초구 신논현', '02-1111-1111', '02-3333-3333');
 
 -- 팀목록 예제데이터
 insert into cms_tList(tCode, crNo, tName)
@@ -452,27 +452,27 @@ values('9', '1248100998', '관리팀');
 insert into cms_worker(wNo, aCode, tCode, wName, email, wPhoto, rank, eType,
 regiDate, tel, gender, tAnnu, pwd, eSt)
 values(1, 0, '1', '김태희', 'aaa@test.com', '태희.jpg', '사장', '계약직',
-'2020-07-13', '01092628654', '2', '12', '1111', '0');
+'2020-07-13', '01092628654', '2', '12', '1111', 0);
 
 insert into cms_worker(wNo, aCode, tCode, wName, email, wPhoto, rank, eType,
 regiDate, tel, gender, tAnnu, pwd, eSt)
 values(2, 1, '2', '홍길동', 'bbb@test.com', '길동.jpg', '사원', '계약직',
-'2020-07-13', '01011111111', '1', '13', '1111', '0');
+'2020-07-13', '01011111111', '1', '13', '1111', 0);
 
 insert into cms_worker(wNo, aCode, tCode, wName, email, wPhoto, rank, eType,
 regiDate, tel, gender, tAnnu, pwd, eSt)
 values(3, 9, '9', '임꺽정', 'ccc@test.com', '꺽정.jpg', '대리', '정규직',
-'2020-07-13', '01022222222', '1', '12', '1111', '0');
+'2020-07-13', '01022222222', '1', '12', '1111', 0);
 
 insert into cms_worker(wNo, aCode, tCode, wName, email, wPhoto, rank, eType,
 regiDate, tel, gender, tAnnu, pwd, eSt)
 values(4, 9, '9', '나퇴근', 'ddd@test.com', '퇴근.jpg', '대리', '정규직',
-'2020-07-13', '01033333333', '1', '12', '1111', '1');
+'2020-07-13', '01033333333', '1', '12', '1111', 1);
 
 insert into cms_worker(wNo, aCode, tCode, wName, email, wPhoto, rank, eType,
 regiDate, tel, gender, tAnnu, pwd, eSt)
 values(5, 0, '3', '박영양', 'eee@test.com', '영양.jpg', '주임', '정규직',
-'2020-07-13', '01033333333', '1', '12', '1111', '0');
+'2020-07-13', '01044444444', '1', '12', '1111', 0);
 
 
 -- 일정 예제데이터
@@ -485,15 +485,6 @@ values('2', 2, '회의2', '2020-07-13', '2020-12-31', '회의하는날2', '회�
 insert into cms_calender(calCode, wNo, title, sdt, edt, content, place)
 values('3', 2, '발표', '2020-11-17', '2020-11-18', '발표하는날', '회사');
 
--- 휴가 신청 예제데이터
-insert into cms_vApp(vNo, vCode, wNo, adt, sdt, edt, used, rs, appr)
-values(1, '1', 1, '2020-11-15', '2020-11-18', '2020-11-19', 1, '병가', '승인대기중');
-
-insert into cms_vApp(vNo, vCode, wNo, adt, sdt, edt, used, rs, appr)
-values(2, '2', 2, '2020-11-15', '2020-11-18', '2020-11-22', 4, '연차', '승인대기중');
-
-insert into cms_vApp(vNo, vCode, wNo, adt, sdt, edt, used, rs, appr)
-values(3, '3', 3, '2020-11-15', '2020-11-18', '2020-11-18', 0, '반차', '승인대기중');
 
 -- 휴가 종류 예제데이터
 insert into cms_vKind(vCode, name)
@@ -505,32 +496,42 @@ values('2', '연차');
 insert into cms_vKind(vCode, name)
 values('3', '반차');
 
+-- 휴가 신청 예제데이터
+insert into cms_vApp(vNo, vCode, wNo, adt, sdt, edt, used, rs, appr)
+values(1, '1', 1, '2020-11-15', '2020-11-18', '2020-11-19', 1, '병가', '승인대기중');
+
+insert into cms_vApp(vNo, vCode, wNo, adt, sdt, edt, used, rs, appr)
+values(2, '2', 2, '2020-11-15', '2020-11-18', '2020-11-22', 4, '연차', '승인대기중');
+
+insert into cms_vApp(vNo, vCode, wNo, adt, sdt, edt, used, rs, appr)
+values(3, '3', 3, '2020-11-15', '2020-11-18', '2020-11-18', 0, '반차', '승인대기중');
+
 -- 대화방 예제 데이터
 insert into cms_cRoom(gChatCode, cName, cExpl)
-values(1, '우리팀채팅방', '우리팀 회의방')
+values(1, '우리팀채팅방', '우리팀 회의방');
 
 -- 대화방 참여자 예제 데이터
 insert into cms_cGroup(wNo, gChatCode)
-values(1, 1)
+values(1, 1);
 
 -- 대화 예제 데이터
 insert into cms_chat(cNo, wNo, gChatCode, cContent, cName, cDate)
-values(1, 1, 1, '안녕하세요', '텍스트', 2020-11-18)
+values(1, 1, 1, '안녕하세요', '텍스트', '2020-11-18');
 
 --
 
 -- 게시판 예제 데이터
 insert into cms_board(bNo, bName)
-values(1, "공지사항")
+values(1, "공지사항");
 
 insert into cms_board(bNo, bName)
-values(2, "사내소식")
+values(2, "사내소식");
 
 insert into cms_board(bNo, bName)
-values(3, "자유게시판")
+values(3, "자유게시판");
 
 insert into cms_board(bNo, bName)
-values(4, "구내식단")
+values(4, "구내식단");
 
 -- 게시글 정보 예제 데이터
 insert into cms_bList(bNo, bNo2, wNo, title, regiDate, vCount, aFile, fSize, content)
@@ -547,20 +548,19 @@ values(4, 4, 5, '게시글 제목 테스트4', '2020-11-18', 0, '첨부파일명
 
 -- 댓글 정보 예제 데이터
 insert into cms_cmtInfo(cCode, bNo, list, stage, content, rdt, wNo)
-values('a', 1, 1, 1, "댓글 내용1", '2020-11-18', 1)
+values('a', 1, 1, 1, "댓글 내용1", '2020-11-18', 1);
 
 insert into cms_cmtInfo(cCode, bNo, list, stage, content, rdt, wNo)
-values('b', 2, 1, 1, "댓글 내용2", '2020-11-18', 2)
+values('b', 2, 1, 1, "댓글 내용2", '2020-11-18', 2);
 
 insert into cms_cmtInfo(cCode, bNo, list, stage, content, rdt, wNo)
-values('c', 3, 1, 1, "댓글 내용3", '2020-11-19', 3)
+values('c', 3, 1, 1, "댓글 내용3", '2020-11-19', 3);
 
 insert into cms_cmtInfo(cCode, bNo, list, stage, content, rdt, wNo)
-values('d', 4, 1, 1, "댓글 내용4", '2020-11-20', 4)
+values('d', 4, 1, 1, "댓글 내용4", '2020-11-20', 4);
 
 insert into cms_cmtInfo(cCode, bNo, list, stage, content, rdt, wNo)
-values('e', 4, 1, 2, "댓글 내용5", '2020-11-20', 5)
-
+values('e', 4, 1, 2, "댓글 내용5", '2020-11-20', 5);
 
 
 
