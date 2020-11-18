@@ -156,6 +156,27 @@ CREATE UNIQUE INDEX UIX_cms_auth
     name ASC -- 권한명
   );
 
+-- 휴가 종류 
+CREATE TABLE cms_vKind (
+  vCode VARCHAR(20) NOT NULL COMMENT '휴가 코드', -- 휴가 코드
+  name  VARCHAR(50) NOT NULL COMMENT '휴가명' -- 휴가명
+)
+COMMENT '휴가 종류 ';
+
+-- 휴가 종류 
+ALTER TABLE cms_vKind
+  ADD CONSTRAINT PK_cms_vKind -- 휴가 종류  기본키
+    PRIMARY KEY (
+      vCode -- 휴가 코드
+    );
+    
+-- 휴가 신청
+ALTER TABLE cms_vApp
+  ADD CONSTRAINT PK_cms_vApp -- 휴가 신청 기본키
+    PRIMARY KEY (
+      vNo -- 휴가신청번호
+    );
+    
 -- 휴가 신청
 CREATE TABLE cms_vApp (
   vNo   INTEGER     NOT NULL COMMENT '휴가신청번호', -- 휴가신청번호
@@ -170,26 +191,7 @@ CREATE TABLE cms_vApp (
 )
 COMMENT '휴가 신청';
 
--- 휴가 신청
-ALTER TABLE cms_vApp
-  ADD CONSTRAINT PK_cms_vApp -- 휴가 신청 기본키
-    PRIMARY KEY (
-      vNo -- 휴가신청번호
-    );
 
--- 휴가 종류 
-CREATE TABLE cms_vKind (
-  vCode VARCHAR(20) NOT NULL COMMENT '휴가 코드', -- 휴가 코드
-  name  VARCHAR(50) NOT NULL COMMENT '휴가명' -- 휴가명
-)
-COMMENT '휴가 종류 ';
-
--- 휴가 종류 
-ALTER TABLE cms_vKind
-  ADD CONSTRAINT PK_cms_vKind -- 휴가 종류  기본키
-    PRIMARY KEY (
-      vCode -- 휴가 코드
-    );
 
 -- 댓글 정보
 CREATE TABLE cms_cmtInfo (
