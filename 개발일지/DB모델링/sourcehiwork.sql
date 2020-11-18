@@ -497,3 +497,15 @@ values('2', '연차');
 insert into cms_vKind(vCode, name)
 values('3', '반차');
 
+-- 대화방 예제 데이터
+insert into cms_cRoom(gChatCode, cName, cExpl)
+values(1, '우리팀채팅방', '우리팀 회의방')
+
+-- 대화방 참여자 예제 데이터
+insert into cms_cGroup(wNo, gChatCode)
+values(1, 1)
+
+-- 대화 예제 데이터
+insert into cms_chat(cNo, wNo, gChatCode, cContent, cName, cDate)
+values(1, 1, 1, '안녕하세요', '텍스트', 2020-11-18)
+
