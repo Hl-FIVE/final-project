@@ -498,6 +498,7 @@ values('2', '연차');
 insert into cms_vKind(vCode, name)
 values('3', '반차');
 
+
 -- 휴가 신청 예제데이터
 insert into cms_vApp(vNo, vCode, wNo, adt, sdt, edt, used, rs, appr)
 values(1, '1', 1, '2020-11-15', '2020-11-18', '2020-11-19', 1, '병가', '승인대기중');
@@ -520,7 +521,7 @@ values(1, 1);
 insert into cms_chat(cNo, wNo, gChatCode, cContent, cName, cDate)
 values(1, 1, 1, '안녕하세요', '텍스트', '2020-11-18');
 
---
+
 
 -- 게시판 예제 데이터
 insert into cms_board(bNo, bName)
