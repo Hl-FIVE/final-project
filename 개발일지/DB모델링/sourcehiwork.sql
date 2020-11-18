@@ -212,7 +212,7 @@ ALTER TABLE cms_cmtInfo
 
 -- 대화방
 CREATE TABLE cms_cRoom (
-  gChatCode VARCHAR(20) NOT NULL COMMENT '대화방번호', -- 대화방번호
+  gChatCode INTEGER     NOT NULL COMMENT '대화방번호', -- 대화방번호
   cName     VARCHAR(50) NOT NULL COMMENT '채팅방명', -- 채팅방명
   cExpl     MEDIUMTEXT  NULL     COMMENT '채팅방설명' -- 채팅방설명
 )
@@ -481,6 +481,12 @@ values('3', 2, '발표', '2020-11-17', '2020-11-18', '발표하는날', '회사'
 
 -- 휴가 신청
 insert into cms_vApp(COL, vCode, wNo, adt, sdt, edt, used, rs, appr)
-values(1, 2)
+values(1, '1', 1, '2020-11-15', '2020-11-18', '2020-11-19', '1', '병가', '승인대기중');
+
+insert into cms_vApp(COL, vCode, wNo, adt, sdt, edt, used, rs, appr)
+values(2, '2', 2, '2020-11-15', '2020-11-18', '2020-11-22', '4', '연차', '승인대기중');
+
+insert into cms_vApp(COL, vCode, wNo, adt, sdt, edt, used, rs, appr)
+values(3, '3', 3, '2020-11-15', '2020-11-18', '2020-11-18', '0', '반차', '승인대기중');
 
 
