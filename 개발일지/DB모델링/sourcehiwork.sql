@@ -46,7 +46,7 @@ CREATE TABLE cms_bList (
   regiDate DATE        NOT NULL COMMENT '등록일', -- 등록일
   vCount   INTEGER     NOT NULL COMMENT '조회수', -- 조회수
   aFile    VARCHAR(50) NULL     COMMENT '첨부파일명', -- 첨부파일명
-  fSize    MEDIUMTEXT  NULL     COMMENT '첨부파일 용량', -- 첨부파일 용량
+  fSize    INTEGER     NULL     COMMENT '첨부파일 용량', -- 첨부파일 용량
   content  MEDIUMTEXT  NULL     COMMENT '글내용' -- 글내용
 )
 COMMENT '게시글 정보';
