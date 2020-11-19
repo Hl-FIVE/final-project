@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 -- 게시글 정보
 DROP TABLE IF EXISTS cms_bList RESTRICT;
 
@@ -571,23 +571,6 @@ insert into cms_cmtInfo(cCode, bNo, list, stage, content, rdt, wNo)
 values('e', 4, 1, 2, "댓글 내용5", '2020-11-20', 5);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 -- 게시글 정보
 DROP TABLE IF EXISTS cms_bList RESTRICT;
 
