@@ -534,16 +534,16 @@ values(4, "구내식단")
 
 -- 게시글 정보 예제 데이터
 insert into cms_bList(bNo, bNo2, wNo, title, regiDate, vCount, aFile, fSize, content)
-values(1, 1, 1, '게시글 테스트1', '2020-11-18', 0, '첨부파일명1', 1.5, '글 내용 테스트1');
+values(1, 1, 1, '게시글 제목 테스트1', '2020-11-18', 0, '첨부파일명1', 1.5, '글 내용 테스트1');
 
 insert into cms_bList(bNo, bNo2, wNo, title, regiDate, vCount, aFile, fSize, content)
-values(2, 2, 2, '게시글 테스트1', '2020-11-18', 0, '첨부파일명1', 1.7, '글 내용 테스트1');
+values(2, 2, 2, '게시글 제목 테스트2', '2020-11-18', 0, '첨부파일명2', 1.7, '글 내용 테스트2');
 
 insert into cms_bList(bNo, bNo2, wNo, title, regiDate, vCount, aFile, fSize, content)
-values(3, 3, 3, '게시글 테스트1', '2020-11-18', 0, '첨부파일명1', 2.3, '글 내용 테스트1');
+values(3, 3, 3, '게시글 제목 테스트3', '2020-11-18', 0, '첨부파일명3', 2.3, '글 내용 테스트3');
 
 insert into cms_bList(bNo, bNo2, wNo, title, regiDate, vCount, aFile, fSize, content)
-values(4, 4, 4, '게시글 테스트1', '2020-11-18', 0, '첨부파일명1', 1.5, '글 내용 테스트1');
+values(4, 4, 5, '게시글 제목 테스트4', '2020-11-18', 0, '첨부파일명4', 1.5, '글 내용 테스트4');
 
 -- 댓글 정보 예제 데이터
 insert into cms_cmtInfo(cCode, bNo, list, stage, content, rdt, wNo)
