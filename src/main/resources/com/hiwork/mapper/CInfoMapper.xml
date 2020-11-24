@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="CInfoDao">
+  
+  <resultMap type="CInfo" id="CInfoMap">
+    <id column="crNo"           property="crNo"/>
+    <result column="cName"    property="cName"/>
+    <result column="map"  property="map"/>
+    <result column="postNo"      property="postNo"/>
+    <result column="addr"      property="addr"/>
+    <result column="tel"      property="tel"/>
+    <result column="fax"   property="fax"/>
+  
+  </resultMap>
+
+  <select id="find" resultMap="CInfo">
+    select 
+	    i.crNo, 
+	    i.cName, 
+	    i.map, 
+	    i.postNo, 
+	    i.addr, 
+	    i.tel, 
+	    i.fax
+    from 
+      cms_cInfo i
+  </select>
+  
+  <insert id="insert" parameterType="cInfo">
+			insert into cms_cInfo(crNo, cName, map, postNo, addr, tel, fax)
+			values(#{crNo}, #{cName}, #{map}, #{postNo}, #{addr}, #{tel}, #{fax})
+  </insert>
+
+  <update id="update" parameterType="cInfo">
+    update cms_cInfo set 
+      cName = #{cName},
+      map = #{map},
+      postNo = #{postNo}, 
+      addr = #{addr}, 
+      tel = #{tel}, 
+      fax = #{fax}
+    where crNo = #{crNo}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from cms_cInfo 
+    where crNo=#{crNo}
+  </delete>
+</mapper>
+
+
+
+
+
+

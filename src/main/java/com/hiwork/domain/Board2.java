@@ -2,7 +2,7 @@ package com.hiwork.domain;
 
 import java.sql.Date;
 
-public class Board {
+public class Board2 {
   private int no;
   private String title;
   private String content;

@@ -6,15 +6,15 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import com.hiwork.dao.CInfoDao;
-import com.hiwork.dao.mariadb.CInfoDaoImpl;
-import com.hiwork.service.CInfoService;
-import com.hiwork.service.DefaultCInfoService;
+import com.hiwork.dao.BoardDao;
+import com.hiwork.dao.mariadb.BoardDaoImpl;
+import com.hiwork.service.BoardService2;
+import com.hiwork.service.DefaultBoardService2;
 import com.hiwork.util.SqlSessionFactoryProxy;
 
 
 @WebListener
-public class DataHandlerListener implements ServletContextListener {
+public class DataHandlerListener2 implements ServletContextListener {
 
   @Override
   public void contextInitialized(ServletContextEvent sce) {
@@ -26,15 +26,15 @@ public class DataHandlerListener implements ServletContextListener {
               Resources.getResourceAsStream("com/hiwork/conf/mybatis-config.xml")));
 
       // DAO 구현체 생성
-      CInfoDao cInfoDao = new CInfoDaoImpl(sqlSessionFactory);
+      BoardDao boardDao = new BoardDaoImpl(sqlSessionFactory);
 
       // Service 구현체 생성
-      CInfoService cInfoService = new DefaultCInfoService(cInfoDao);
+      BoardService2 boardService = new DefaultBoardService2(boardDao);
 
       ServletContext ctx = sce.getServletContext();
 
       // 다른 객체가 사용할 수 있도록 context 맵 보관소에 저장해둔다.
-      ctx.setAttribute("cInfoService", cInfoService);
+      ctx.setAttribute("boardService", boardService);
 
     } catch (Exception e) {
       System.out.println("Mybatis 및 DAO, 서비스 객체 준비 중 오류 발생!");

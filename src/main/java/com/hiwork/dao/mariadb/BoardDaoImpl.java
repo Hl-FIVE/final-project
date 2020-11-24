@@ -4,7 +4,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import com.hiwork.dao.BoardDao;
-import com.hiwork.domain.Board;
+import com.hiwork.domain.Board2;
 
 // Mybatis 적용
 // => SqlSessionFactory를 자체적으로 생성하지 않고
@@ -19,7 +19,7 @@ public class BoardDaoImpl implements BoardDao{
   }
 
   @Override
-  public int insert(Board board) throws Exception {
+  public int insert(Board2 board) throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.insert("BoardDao.insert", board);
     }
@@ -33,21 +33,21 @@ public class BoardDaoImpl implements BoardDao{
   }
 
   @Override
-  public Board findByNo(int no) throws Exception {
+  public Board2 findByNo(int no) throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.selectOne("BoardDao.findByNo", no);
     }
   }
 
   @Override
-  public List<Board> findAll(String keyword) throws Exception {
+  public List<Board2> findAll(String keyword) throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.selectList("BoardDao.findAll", keyword);
     }
   }
 
   @Override
-  public int update(Board board) throws Exception {
+  public int update(Board2 board) throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
       return sqlSession.update("BoardDao.update", board);
     }

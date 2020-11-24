@@ -10,8 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.hiwork.domain.Board;
-import com.hiwork.service.BoardService;
+import com.hiwork.domain.Board2;
+import com.hiwork.service.BoardService2;
 
 @WebServlet("/board/list")
 public class BoardListServlet extends HttpServlet {
@@ -22,8 +22,8 @@ public class BoardListServlet extends HttpServlet {
       throws ServletException, IOException {
 
     ServletContext ctx = request.getServletContext();
-    BoardService boardService =
-        (BoardService) ctx.getAttribute("boardService");
+    BoardService2 boardService =
+        (BoardService2) ctx.getAttribute("boardService");
 
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
@@ -35,7 +35,7 @@ public class BoardListServlet extends HttpServlet {
     try {
       out.println("<h1>게시물 목록</h1>");
 
-      List<Board> list = boardService.list();
+      List<Board2> list = boardService.list();
       out.println("<table border='1'>");
       out.println("<tr>" // table row
           + "<th>번호</th>" // table header
@@ -45,7 +45,7 @@ public class BoardListServlet extends HttpServlet {
           + "<th>조회수</th>"
           + "</tr>");
 
-      for (Board board : list) {
+      for (Board2 board : list) {
         out.printf("<tr>"
             + "<td>%d</td>"
             + "<td>%s</td>"
