@@ -15,8 +15,8 @@
     <result column="fax"   property="fax"/>
   
   </resultMap>
-
-  <select id="find" resultMap="CInfo">
+<!-- 
+  <select id="find" resultMap="cInfo">
     select 
 	    i.crNo, 
 	    i.cName, 
@@ -28,7 +28,7 @@
     from 
       cms_cInfo i
   </select>
-  
+   -->
   <insert id="insert" parameterType="cInfo">
 			insert into cms_cInfo(crNo, cName, map, postNo, addr, tel, fax)
 			values(#{crNo}, #{cName}, #{map}, #{postNo}, #{addr}, #{tel}, #{fax})

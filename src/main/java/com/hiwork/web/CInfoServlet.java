@@ -10,11 +10,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.hiwork.domain.Board2;
-import com.hiwork.service.BoardService2;
+import com.hiwork.domain.CInfo;
+import com.hiwork.service.CInfoService;
 
 @WebServlet("/board/list")
-public class BoardListServlet extends HttpServlet {
+public class CInfoServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   @Override
@@ -22,42 +22,48 @@ public class BoardListServlet extends HttpServlet {
       throws ServletException, IOException {
 
     ServletContext ctx = request.getServletContext();
-    BoardService2 boardService =
-        (BoardService2) ctx.getAttribute("boardService");
+    CInfoService cInfoService =
+        (CInfoService) ctx.getAttribute("cInfoService");
 
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
 
     out.println("<!DOCTYPE html>");
     out.println("<html>");
-    out.println("<head><title>게시글목록</title></head>");
+    out.println("<head><title>회사정보</title></head>");
     out.println("<body>");
     try {
-      out.println("<h1>게시물 목록</h1>");
+      out.println("<h1>회사정보</h1>");
 
-      List<Board2> list = boardService.list();
+      List<CInfo> list = cInfoService.list();
       out.println("<table border='1'>");
       out.println("<tr>" // table row
-          + "<th>번호</th>" // table header
-          + "<th>제목</th>"
-          + "<th>작성자</th>"
-          + "<th>등록일</th>"
-          + "<th>조회수</th>"
+          + "<th>법인 번호</th>" // table header
+          + "<th>회사명</th>"
+          + "<th>지도</th>"
+          + "<th>우편번호</th>"
+          + "<th>주소</th>"
+          + "<th>전화번호</th>"
+          + "<th>팩스번호</th>"
           + "</tr>");
 
-      for (Board2 board : list) {
+      for (CInfo cInfo : list) {
         out.printf("<tr>"
             + "<td>%d</td>"
             + "<td>%s</td>"
             + "<td>%s</td>"
-            + "<td>%s</td>"
             + "<td>%d</td>"
+            + "<td>%s</td>"
+            + "<td>%s</td>"
+            + "<td>%s</td>"
             + "</tr>\n",
-            board.getNo(),
-            board.getTitle(),
-            board.getWriter().getName(),
-            board.getRegisteredDate(),
-            board.getViewCount());
+            cInfo.getCrNo(),
+            cInfo.getcName(),
+            cInfo.getMap(),
+            cInfo.getPostNo(),
+            cInfo.getAddr(),
+            cInfo.getTel(),
+            cInfo.getFax());
       }
       out.println("</table>");
 
