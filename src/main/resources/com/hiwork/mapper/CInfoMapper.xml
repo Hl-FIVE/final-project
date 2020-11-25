@@ -5,7 +5,7 @@
   
 <mapper namespace="CInfoDao">
   
-  <resultMap type="CInfo" id="CInfoMap">
+  <resultMap type="cInfo" id="cInfoMap">
     <id column="crNo"           property="crNo"/>
     <result column="cName"    property="cName"/>
     <result column="map"  property="map"/>
@@ -15,20 +15,20 @@
     <result column="fax"   property="fax"/>
   
   </resultMap>
-<!-- 
-  <select id="find" resultMap="cInfo">
+
+  <select id="find" resultMap="cInfoMap">
     select 
-	    i.crNo, 
-	    i.cName, 
-	    i.map, 
-	    i.postNo, 
-	    i.addr, 
-	    i.tel, 
-	    i.fax
+	    crNo, 
+	    cName, 
+	    map, 
+	    postNo, 
+	    addr, 
+	    tel, 
+	    fax
     from 
-      cms_cInfo i
+      cms_cInfo
   </select>
-   -->
+
   <insert id="insert" parameterType="cInfo">
 			insert into cms_cInfo(crNo, cName, map, postNo, addr, tel, fax)
 			values(#{crNo}, #{cName}, #{map}, #{postNo}, #{addr}, #{tel}, #{fax})
