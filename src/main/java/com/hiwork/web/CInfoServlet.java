@@ -30,10 +30,11 @@ public class CInfoServlet extends HttpServlet {
 
     out.println("<!DOCTYPE html>");
     out.println("<html>");
+    out.println("<style>#header{background-color:navy;color:white;padding: 2px 10px;</style>");
     out.println("<head><title>회사정보</title></head>");
     out.println("<body>");
     try {
-      out.println("<h1>회사정보</h1>");
+      out.println("<div id=header><h1>회사정보</h1></div>");
 
       List<CInfo> list = cInfoService.list();
       out.println("<table border='1'>");
