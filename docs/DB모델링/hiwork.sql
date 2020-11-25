@@ -38,6 +38,22 @@ DROP TABLE IF EXISTS cms_chat RESTRICT;
 -- 대화방참여자
 DROP TABLE IF EXISTS cms_cGroup RESTRICT;
 
+-- 아마존 인코딩
+alter table cms_auth convert to character set utf8;
+alter table cms_bList convert to character set utf8;
+alter table cms_board convert to character set utf8;
+alter table cms_cGroup convert to character set utf8;
+alter table cms_cInfo convert to character set utf8;
+alter table cms_cRoom convert to character set utf8;
+alter table cms_calender convert to character set utf8;
+alter table cms_chat convert to character set utf8;
+alter table cms_cmtInfo convert to character set utf8;
+alter table cms_tList convert to character set utf8;
+alter table cms_vApp convert to character set utf8;
+alter table cms_vKind convert to character set utf8;
+alter table cms_worker convert to character set utf8;
+
+
 -- 게시글 정보
 CREATE TABLE cms_bList (
   bNo      INTEGER     NOT NULL COMMENT '게시글번호', -- 게시글번호
