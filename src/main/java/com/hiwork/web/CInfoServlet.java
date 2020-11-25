@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.hiwork.domain.CInfo;
 import com.hiwork.service.CInfoService;
 
-@WebServlet("/board/list")
+@WebServlet("/cinfo/list")
 public class CInfoServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
