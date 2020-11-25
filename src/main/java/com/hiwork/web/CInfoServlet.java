@@ -30,11 +30,15 @@ public class CInfoServlet extends HttpServlet {
 
     out.println("<!DOCTYPE html>");
     out.println("<html>");
-    out.println("<style>#header{background-color:navy;color:white;padding: 2px 10px;</style>");
-    out.println("<head><title>회사정보</title></head>");
+    out.println("<head>");
+    out.println("<style>"
+        + "#header{background-color:navy;color:white;padding: 2px 10px}"
+        + "#footer{background-color:gray;color:white;padding: 10px}</style>");
+    out.println("<title>회사정보</title></head>");
     out.println("<body>");
     try {
       out.println("<div id=header><h1>회사정보</h1></div>");
+      out.println("<img src=high-work/src/docs/company.png alt=My Image>");
 
       List<CInfo> list = cInfoService.list();
       out.println("<table border='1'>");
@@ -67,7 +71,7 @@ public class CInfoServlet extends HttpServlet {
             cInfo.getFax());
       }
       out.println("</table>");
-
+      out.println("<div id=footer><span>Copyright2020.하이워크.All rights reserved.</span></footer>");
     } catch (Exception e) {
       out.printf("<p>작업 처리 중 오류 발생! - %s</p>\n", e.getMessage());
 
