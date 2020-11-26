@@ -38,7 +38,7 @@ public class CInfoServlet extends HttpServlet {
     out.println("<body>");
     try {
       out.println("<div id=header><h1>회사정보</h1></div>");
-      out.println("<img src=hi-work/src/docs/company.png alt=My Image>");
+      out.println("<img src='../company.png' alt=MyImage>");
 
       List<CInfo> list = cInfoService.list();
       out.println("<table border='1'>");
