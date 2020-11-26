@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="WorkerDao">
+
+	<resultMap type="worker" id="WorkerMap">
+		<id column="wNo" property="wNo" />
+		<result column="aCode" property="aCode" />
+		<result column="wName" property="wName" />
+		<result column="email" property="email" />
+		<result column="wPhoto" property="wPhoto" />
+		<result column="rank" property="rank" />
+		<result column="eType" property="eType" />
+		<result column="regiDate" property="regiDate" />
+		<result column="tel" property="tel" />
+		<result column="gender" property="gender" />
+		<result column="tAnnu" property="tAnnu" />
+		<result column="pwd" property="pwd" />
+		<result column="eSt" property="eSt" />
+	</resultMap>
+
+<!-- 번호, 이름, 이메일, 직급, 고용형태, 입사일, 휴대폰번호, 성별, 재직상태 --> 
+	<select id="findAll" resultMap="MemberMap">
+		select
+		 wNo,
+		 wName,
+		 email,
+		 rank,
+		 eType,
+		 regiDate,
+		 tel,
+		 gender,
+		 eSt
+		cms_worker
+		 order by
+		 no desc
+	</select>
+
+</mapper>
