@@ -1,7 +1,7 @@
 package com.hiwork.service;
 
 import java.util.List;
-import com.hiwork.dao.mariadb.VAppDao;
+import com.hiwork.dao.VAppDao;
 import com.hiwork.domain.VApp;
 
 public class DefaultVAppService implements VAppService {

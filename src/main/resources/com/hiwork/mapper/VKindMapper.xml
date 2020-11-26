@@ -5,12 +5,12 @@
   
 <mapper namespace="VKindDao">
   
-  <resultMap type="VKind" id="VKindMap">
+  <resultMap type="vKind" id="vKindMap">
     <id column="vCode"           property="vCode"/>
     <result column="name"    property="name"/>
   </resultMap>
 
-  <select id="find" resultMap="VKindMap">
+  <select id="find" resultMap="vKindMap">
     select 
       vCode, 
       name

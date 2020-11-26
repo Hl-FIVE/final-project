@@ -34,10 +34,10 @@ public class VAppServlet extends HttpServlet {
     out.println("<style>"
         + "#header{background-color:navy;color:white;padding: 2px 10px}"
         + "#footer{background-color:gray;color:white;padding: 10px}</style>");
-    out.println("<title>휴가신청</title></head>");
+    out.println("<title>휴가 신청</title></head>");
     out.println("<body>");
     try {
-      out.println("<div id=header><h1>휴가신청</h1></div>");
+      out.println("<div id=header><h1>휴가 신청</h1></div>");
 
       List<VApp> list = vAppService.list();
       out.println("<table border='1'>");

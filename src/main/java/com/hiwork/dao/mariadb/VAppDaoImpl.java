@@ -3,6 +3,7 @@ package com.hiwork.dao.mariadb;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import com.hiwork.dao.VAppDao;
 import com.hiwork.domain.VApp;
 
 public class VAppDaoImpl implements VAppDao {
