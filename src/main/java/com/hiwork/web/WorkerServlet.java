@@ -16,28 +16,52 @@ import com.hiwork.service.WorkerService;
 @WebServlet("/worker/list")
 public class WorkerServlet extends HttpServlet {
   private static final long serialVersionUID = 1;
-  
+
   @Override 
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    
+
     ServletContext ctx = request.getServletContext();
     WorkerService workerService =
         (WorkerService) ctx.getAttribute("workerService");
-    
+
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
 
     out.println("<!DOCTYPE html>");
     out.println("<html>");
-    out.println("<head><title>회원 목록</title></head>");
-
+    out.println("<head><title>직원 목록</title></head>");
+    out.println("<body>");
     try {
+      out.println("<h1>직원 목록</h1>");
+
       List<Worker> list = workerService.list();
-      out.println("번호, 이름, 이메일, 직급, 고용형태, 입사일, 휴대폰번호, 성별, 재직상태");
-      
+
+      out.println("<table border='1'>");
+      out.println("<thead><tr>"
+          + "<th>번호</th>"
+          + "<th>이름</th>"
+          + "<th>이메일</th>"
+          + "<th>직급</th>"
+          + "<th>고용형태</th>"
+          + "<th>입사일</th>"
+          + "<th>휴대폰번호</th>"
+          + "<th>성별</th>"
+          + "<th>재직상태</th>"
+          + "</tr></thead>");
+
       for (Worker worker : list) {
-        out.printf("%d, %s, %s, %s, %s, %s, %d, %d, %d\n",
+        out.printf("<tr>"
+            + "<th>%d</th>"
+            + "<th>%s</th>"
+            + "<th>%s</th>"
+            + "<th>%s</th>"
+            + "<th>%s</th>"
+            + "<th>%s</th>"
+            + "<th>%d</th>"
+            + "<th>%d</th?>"
+            + "<th>%d<th>"
+            + "</tr>\n",
             worker.getwNo(),
             worker.getwName(),
             worker.getEmail(),
@@ -48,7 +72,8 @@ public class WorkerServlet extends HttpServlet {
             worker.getGender(),
             worker.geteSt());
       }
-      
+      out.println("</tbody>");
+      out.println("</table>");
     } catch (Exception e) {
       out.printf("<p>작업 처리 중 오류 발생! - %s</p>\n", e.getMessage());
 
