@@ -6,9 +6,13 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.hiwork.dao.CAuthDao;
 import com.hiwork.dao.CInfoDao;
+import com.hiwork.dao.mariadb.CAuthDaoImpl;
 import com.hiwork.dao.mariadb.CInfoDaoImpl;
+import com.hiwork.service.CAuthService;
 import com.hiwork.service.CInfoService;
+import com.hiwork.service.DefaultCAuthService;
 import com.hiwork.service.DefaultCInfoService;
 import com.hiwork.util.SqlSessionFactoryProxy;
 
@@ -27,14 +31,18 @@ public class DataHandlerListener implements ServletContextListener {
 
       // DAO 구현체 생성
       CInfoDao cInfoDao = new CInfoDaoImpl(sqlSessionFactory);
+      CAuthDao cAuthDao = new CAuthDaoImpl(sqlSessionFactory);
 
       // Service 구현체 생성
       CInfoService cInfoService = new DefaultCInfoService(cInfoDao);
+      CAuthService cAuthService = new DefaultCAuthService(cAuthDao);
 
       ServletContext ctx = sce.getServletContext();
 
       // 다른 객체가 사용할 수 있도록 context 맵 보관소에 저장해둔다.
       ctx.setAttribute("cInfoService", cInfoService);
+      ctx.setAttribute("cAuthService", cAuthService);
+
 
     } catch (Exception e) {
       System.out.println("Mybatis 및 DAO, 서비스 객체 준비 중 오류 발생!");
