@@ -20,6 +20,8 @@ import com.hiwork.dao.mariadb.CInfoDaoImpl;
 import com.hiwork.dao.mariadb.CRoomDaoImpl;
 import com.hiwork.dao.mariadb.ChatDaoImpl;
 import com.hiwork.dao.mariadb.TListDaoImpl;
+import com.hiwork.dao.mariadb.VAppDao;
+import com.hiwork.dao.mariadb.VAppDaoImpl;
 import com.hiwork.dao.mariadb.VKindDaoImpl;
 import com.hiwork.dao.mariadb.WorkerDaoImpl;
 import com.hiwork.service.AuthService;
@@ -33,9 +35,11 @@ import com.hiwork.service.DefaultCInfoService;
 import com.hiwork.service.DefaultCRoomService;
 import com.hiwork.service.DefaultChatService;
 import com.hiwork.service.DefaultTListService;
+import com.hiwork.service.DefaultVAppService;
 import com.hiwork.service.DefaultVKindService;
 import com.hiwork.service.DefaultWorkerService;
 import com.hiwork.service.TListService;
+import com.hiwork.service.VAppService;
 import com.hiwork.service.VKindService;
 import com.hiwork.service.WorkerService;
 import com.hiwork.util.SqlSessionFactoryProxy;
@@ -61,6 +65,7 @@ public class DataHandlerListener implements ServletContextListener {
       TListDao tListDao = new TListDaoImpl(sqlSessionFactory);
       ChatDao chatDao = new ChatDaoImpl(sqlSessionFactory);
       VKindDao vKindDao = new VKindDaoImpl(sqlSessionFactory);
+      VAppDao vAppDao = new VAppDaoImpl(sqlSessionFactory);
 
       // Service 구현체 생성
       CInfoService cInfoService = new DefaultCInfoService(cInfoDao);
@@ -71,6 +76,7 @@ public class DataHandlerListener implements ServletContextListener {
       TListService tListService = new DefaultTListService(tListDao);
       ChatService chatService = new DefaultChatService(chatDao);
       VKindService vKindService = new DefaultVKindService(vKindDao);
+      VAppService vAppService = new DefaultVAppService(vAppDao);
 
       ServletContext ctx = sce.getServletContext();
 
@@ -83,6 +89,7 @@ public class DataHandlerListener implements ServletContextListener {
       ctx.setAttribute("tListService", tListService);
       ctx.setAttribute("chatService", chatService);
       ctx.setAttribute("vKindService", vKindService);
+      ctx.setAttribute("vAppService", vAppService);
 
     } catch (Exception e) {
       System.out.println("Mybatis 및 DAO, 서비스 객체 준비 중 오류 발생!");
