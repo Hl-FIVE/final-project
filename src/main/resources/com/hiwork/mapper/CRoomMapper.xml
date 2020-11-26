@@ -3,21 +3,27 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="CRoomDao">
+<mapper namespace="ChatDao">
   
-  <resultMap type="cRoom" id="cRoomMap">
-    <id column="gChatCode"    property="gChatCode"/>
-    <result column="cName"    property="cName"/>
-    <result column="cExpl"  property="cExpl"/>
+  <resultMap type="chat" id="chatMap">
+    <id column="cNo"    property="cNo"/>
+    <result column="wNo"    property="wNo"/>
+    <result column="gChatCode"    property="gChatCode"/>
+    <result column="cContent"    property="cContent"/>
+    <result column="cName"  property="cName"/>
+    <result column="cDate"    property="cDate"/>
   </resultMap>
 
-  <select id="find" resultMap="cRoomMap">
+  <select id="find" resultMap="chatMap">
     select 
-	    gChatCode, 
-	    cName, 
-	    cExpl
+	    cNo, 
+	    wNo,
+	    gChatCode,
+	    cContent,
+	    wNo, 
+	    cDate
     from 
-      cms_cRoom
+      cms_chat
   </select>
 
 </mapper>
