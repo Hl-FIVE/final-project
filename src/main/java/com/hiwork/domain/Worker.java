@@ -42,7 +42,7 @@ public class Worker {
   public int getwNo() {
     return wNo;
   }
-  public int getGender() {
+  public int getGender() { 
     return gender;
   }
   public String getwName() { 
