@@ -13,7 +13,7 @@ public class Board {
   // 게시글 정보
   private int bNo;
   private int bNo2;              // 게시판 번호 (외래키)
-  private int wNo;               // 사원 번호 (외래키)
+  private Worker wNo;               // 사원 번호 (외래키)
   private String title;
   private Date regiDate;
   private int vCount;
@@ -29,15 +29,13 @@ public class Board {
     this.bNo2 = bNo2;
   }
 
-  public int getwNo() {
+  public Worker getwNo() {
     return wNo;
   }
 
-  public void setwNo(int wNo) {
+  public void setwNo(Worker wNo) {
     this.wNo = wNo;
   }
-
-
 
   public int getbNo() {
     return bNo;
