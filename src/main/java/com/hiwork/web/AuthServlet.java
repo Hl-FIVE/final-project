@@ -23,7 +23,7 @@ public class AuthServlet extends HttpServlet {
 
     ServletContext ctx = request.getServletContext();
     AuthService authService =
-        (AuthService) ctx.getAttribute("AuthService");
+        (AuthService) ctx.getAttribute("authService");
 
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
