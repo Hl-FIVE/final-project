@@ -38,6 +38,8 @@
     <mapper resource="com/hiwork/mapper/CInfoMapper.xml"/>
     <mapper resource="com/hiwork/mapper/AuthMapper.xml"/>
     <mapper resource="com/hiwork/mapper/CRoomMapper.xml"/>
+    <mapper resource="com/hiwork/mapper/TListMapper.xml"/>
+    
   </mappers>
 
 </configuration>
