@@ -3,38 +3,38 @@ package com.hiwork.dao.mariadb;
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import com.hiwork.dao.CAuthDao;
-import com.hiwork.domain.CAuth;
+import com.hiwork.dao.AuthDao;
+import com.hiwork.domain.Auth;
 
-public class CAuthDaoImpl implements CAuthDao{
+public class AuthDaoImpl implements AuthDao{
 
   SqlSessionFactory sqlSessionFactory;
 
-  public CAuthDaoImpl(SqlSessionFactory sqlSessionFactory) {
+  public AuthDaoImpl(SqlSessionFactory sqlSessionFactory) {
     this.sqlSessionFactory = sqlSessionFactory;
   }
   @Override
   public int delete(int no) throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-      return sqlSession.delete("CAuth.delete", no);
+      return sqlSession.delete("Auth.delete", no);
     }
   }
   @Override
-  public List<CAuth> find() throws Exception {
+  public List<Auth> find() throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-      return sqlSession.selectList("CAuthDao.find");
+      return sqlSession.selectList("AuthDao.find");
     }
   }
   @Override
-  public int update(CAuth cAuth) throws Exception {
+  public int update(Auth auth) throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-      return sqlSession.update("CAuthDao.update", cAuth);
+      return sqlSession.update("AuthDao.update", auth);
     }
   }
   @Override
-  public int insert(CAuth cAuth) throws Exception {
+  public int insert(Auth auth) throws Exception {
     try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
-      return sqlSession.insert("CAuthDao.insert", cAuth);
+      return sqlSession.insert("AuthDao.insert", auth);
     }
   }
 }

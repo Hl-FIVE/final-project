@@ -1,6 +1,6 @@
 package com.hiwork.domain;
 
-public class CAuth {
+public class Auth {
   private int aCode;
   private String name;
 
