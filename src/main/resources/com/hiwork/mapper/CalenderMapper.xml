@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="CalenderDao">
+  
+  <resultMap type="calender" id="calenderMap">
+    <id column="calCode"    property="calCode"/>
+    <result column="wNo"    property="wNo"/>
+    <result column="title"  property="title"/>
+    <result column="cExpl"  property="cExpl"/>
+    <result column="sdt"  property="sdt"/>
+    <result column="edt"  property="edt"/>
+    <result column="content"  property="content"/>
+    <result column="place"  property="place"/>
+  </resultMap>
+
+  <select id="find" resultMap="calenderMap">
+    select 
+	    calCode, 
+	    wNo,
+	    title,
+	    cExpl,
+	    sdt,
+	    edt,
+	    content, 
+	    place
+    from 
+      cms_calender
+  </select>
+
+</mapper>
+
+
+
+
+
+
