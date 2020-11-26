@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="AuthDao">
+  
+  <resultMap type="Auth" id="AuthMap">
+    <id column="aCode"           property="aCode"/>
+    <result column="name"    property="name"/>
+  </resultMap>
+
+  <select id="find" resultMap="AuthMap">
+    select 
+      aCode, 
+      name
+    from 
+      cms_auth
+  </select>
+
+  <insert id="insert" parameterType="Auth">
+      insert into cms_auth(aCode, name)
+      values(#{aCode}, #{name})
+  </insert>
+
+  <update id="update" parameterType="Auth">
+    update cms_auth set 
+      aCode = #{aCode},
+      name = #{name}
+    where aCode = #{aCode}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from cms_auth 
+    where aCode=#{aCode}
+  </delete>
+</mapper>
