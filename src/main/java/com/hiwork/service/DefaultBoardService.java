@@ -8,6 +8,10 @@ public class DefaultBoardService implements BoardService {
 
   BoardDao boardDao;
 
+  public DefaultBoardService(BoardDao boardDao) {
+    this.boardDao = boardDao;
+  }
+
   @Override
   public List<Board> findAll() throws Exception {
     return boardDao.findAll();

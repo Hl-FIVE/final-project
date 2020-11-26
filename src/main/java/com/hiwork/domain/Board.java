@@ -12,14 +12,31 @@ public class Board {
 
   // 게시글 정보
   private int bNo;
-  // private int bNo2;              // 게시판 번호 (외래키)
-  // private int wNo;               // 사원 번호 (외래키)
+  private int bNo2;              // 게시판 번호 (외래키)
+  private int wNo;               // 사원 번호 (외래키)
   private String title;
   private Date regiDate;
   private int vCount;
   private String aFile;
   private int fSize;
   private String content;
+
+  public int getbNo2() {
+    return bNo2;
+  }
+
+  public void setbNo2(int bNo2) {
+    this.bNo2 = bNo2;
+  }
+
+  public int getwNo() {
+    return wNo;
+  }
+
+  public void setwNo(int wNo) {
+    this.wNo = wNo;
+  }
+
 
 
   public int getbNo() {
