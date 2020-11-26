@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="CRoomDao">
+  
+  <resultMap type="cRoom" id="cRoomMap">
+    <id column="gChatCode"    property="gChatCode"/>
+    <result column="cName"    property="cName"/>
+    <result column="cExpl"  property="cExpl"/>
+  </resultMap>
+
+  <select id="find" resultMap="cRoomMap">
+    select 
+	    gChatCode, 
+	    cName, 
+	    cExpl
+    from 
+      cms_cRoom
+  </select>
+
+</mapper>
+
+
+
+
+
+

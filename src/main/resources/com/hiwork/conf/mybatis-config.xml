@@ -39,7 +39,7 @@
     <mapper resource="com/hiwork/mapper/AuthMapper.xml"/>
     <mapper resource="com/hiwork/mapper/CRoomMapper.xml"/>
     <mapper resource="com/hiwork/mapper/TListMapper.xml"/>
-    
+    <mapper resource="com/hiwork/mapper/ChatMapper.xml"/>
   </mappers>
 
 </configuration>
