@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="Auth">
+  
+    <resultMap type="auth" id="authMap">
+    <id column="aCode"           property="aCode"/>
+    <result column="aName"    property="aName"/>
+  </resultMap>
+  
+    <select id="find" resultMap="authMap">
+    select 
+      aCode, 
+      aName, 
+    from 
+      cms_auth
+  </select>
+
+  <insert id="insert" parameterType="auth">
+      insert into cms_auth(aCode, aName)
+      values(#{aCode}, #{aName})
+  </insert>
+  
+  <delete id="delete" parameterType="int">
+    delete from cms_auth
+    where aCode=#{aCode}
+  </delete>
+
+  
+  </mapper>
