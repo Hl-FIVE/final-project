@@ -17,7 +17,7 @@ import com.hiwork.service.WorkerService;
 public class WorkerServlet extends HttpServlet {
   private static final long serialVersionUID = 1;
   
-  @Override
+  @Override 
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     
