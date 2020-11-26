@@ -45,7 +45,7 @@ public class Worker {
   public int getGender() {
     return gender;
   }
-  public String getwName() {
+  public String getwName() { 
     return wName;
   }
   public String getEmail() {

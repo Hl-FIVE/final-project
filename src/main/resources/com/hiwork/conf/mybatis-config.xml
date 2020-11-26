@@ -38,12 +38,9 @@
     <mapper resource="com/hiwork/mapper/CInfoMapper.xml"/>
     <mapper resource="com/hiwork/mapper/AuthMapper.xml"/>
     <mapper resource="com/hiwork/mapper/CRoomMapper.xml"/>
-<<<<<<< HEAD
     <mapper resource="com/hiwork/mapper/WorkerMapper.xml"/>
-=======
     <mapper resource="com/hiwork/mapper/TListMapper.xml"/>
     <mapper resource="com/hiwork/mapper/ChatMapper.xml"/>
->>>>>>> branch 'main' of https://github.com/Hl-FIVE/hi-work.git
   </mappers>
 
 </configuration>

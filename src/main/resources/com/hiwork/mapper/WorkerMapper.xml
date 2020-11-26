@@ -22,7 +22,7 @@
 	</resultMap>
 
 <!-- 번호, 이름, 이메일, 직급, 고용형태, 입사일, 휴대폰번호, 성별, 재직상태 --> 
-	<select id="findAll" resultMap="MemberMap">
+	<select id="findAll" resultMap="WorkerMap">
 		select
 		 wNo,
 		 wName,
