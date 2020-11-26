@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="TListDao">
+  
+  <resultMap type="TList" id="TListMap">
+    <id column="tCode"           property="tCode"/>
+    <result column="crNo"    property="crNo"/>
+    <result column="tName"    property="tName"/>
+  </resultMap>
+
+  <select id="find" resultMap="TListMap">
+    select 
+      tCode,
+      crNo, 
+      tName
+    from 
+      cms_tList
+  </select>
+
+  <insert id="insert" parameterType="TList">
+      insert into cms_tList(tCode, crNo, tName)
+      values(#{tCode}, #{crNo}, #{tName})
+  </insert>
+
+  <update id="update" parameterType="TList">
+    update cms_tList set 
+      tCode = #{tCode},
+      crNo = #{crNo},
+      tName = #{tName}
+    where tCode = #{tCode}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from cms_tList
+    where tCode=#{tCode}
+  </delete>
+</mapper>
