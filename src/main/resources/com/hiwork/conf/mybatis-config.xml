@@ -39,7 +39,6 @@
     <mapper resource="com/hiwork/mapper/AuthMapper.xml"/>
     <mapper resource="com/hiwork/mapper/CRoomMapper.xml"/>
     <mapper resource="com/hiwork/mapper/WorkerMapper.xml"/>
-     <mapper resource="com/hiwork/mapper/BoardMapper.xml"/>
     <mapper resource="com/hiwork/mapper/TListMapper.xml"/>
     <mapper resource="com/hiwork/mapper/ChatMapper.xml"/>
     <mapper resource="com/hiwork/mapper/VKindMapper.xml"/>
@@ -48,6 +47,8 @@
 
 </configuration>
 
+    <!--  <mapper resource="com/hiwork/mapper/BoardMapper.xml"/>
+    -->
 
 
 
