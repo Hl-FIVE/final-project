@@ -42,12 +42,9 @@
     <mapper resource="com/hiwork/mapper/TListMapper.xml"/>
     <mapper resource="com/hiwork/mapper/ChatMapper.xml"/>
     <mapper resource="com/hiwork/mapper/VKindMapper.xml"/>
-<<<<<<< HEAD
     <mapper resource="com/hiwork/mapper/CalenderMapper.xml"/>
     
-=======
     <mapper resource="com/hiwork/mapper/VAppMapper.xml"/>
->>>>>>> branch 'main' of https://github.com/Hl-FIVE/hi-work.git
   </mappers>
 
 </configuration>
