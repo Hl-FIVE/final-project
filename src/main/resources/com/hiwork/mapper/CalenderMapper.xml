@@ -9,7 +9,6 @@
     <id column="calCode"    property="calCode"/>
     <result column="wNo"    property="wNo"/>
     <result column="title"  property="title"/>
-    <result column="cExpl"  property="cExpl"/>
     <result column="sdt"  property="sdt"/>
     <result column="edt"  property="edt"/>
     <result column="content"  property="content"/>
@@ -21,7 +20,6 @@
 	    calCode, 
 	    wNo,
 	    title,
-	    cExpl,
 	    sdt,
 	    edt,
 	    content, 
