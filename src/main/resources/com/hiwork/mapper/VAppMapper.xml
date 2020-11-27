@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="VAppDao">
+  
+  <resultMap type="vApp" id="vAppMap">
+    <id column="vNo"           property="vNo"/>
+    <result column="vCode"    property="vCode"/>
+    <result column="wNo"    property="wNo"/>
+    <result column="adt"    property="adt"/>
+    <result column="sdt"    property="sdt"/>
+    <result column="edt"    property="edt"/>
+    <result column="used"    property="used"/>
+    <result column="rs"    property="rs"/>
+    <result column="appr"    property="appr"/>
+  </resultMap>
+
+  <select id="find" resultMap="vAppMap">
+    select 
+      vNo, 
+      vCode,
+      wNo,
+      adt,
+      sdt,
+      edt,
+      used,
+      rs,
+      appr
+    from 
+      cms_vApp
+  </select>
+
+  <insert id="insert" parameterType="vApp">
+      insert into cms_vApp(vNo, vCode, wNo, adt, sdt, edt, used, rs, appr)
+      values(#{vNo}, #{vCode}, #{wNo}, #{adt}, #{sdt}, #{edt}, #{used}, #{rs}, #{appr})
+  </insert>
+
+  <update id="update" parameterType="vApp">
+    update cms_vApp set 
+      vNo = #{vNo},
+      vCode = #{vCode},
+      wNo= #{wNo},
+      adt = #{adt},
+      sdt = #{sdt},
+      edt = #{edt},
+      used = #{used},
+      rs = #{rs},
+      appr = #{appr}
+    where vNo = #{vNo}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from cms_vApp 
+    where vNo=#{vNo}
+  </delete>
+</mapper>

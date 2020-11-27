@@ -13,6 +13,7 @@ import com.hiwork.dao.CRoomDao;
 import com.hiwork.dao.CalenderDao;
 import com.hiwork.dao.ChatDao;
 import com.hiwork.dao.TListDao;
+import com.hiwork.dao.VAppDao;
 import com.hiwork.dao.VKindDao;
 import com.hiwork.dao.WorkerDao;
 import com.hiwork.dao.mariadb.AuthDaoImpl;
@@ -22,6 +23,7 @@ import com.hiwork.dao.mariadb.CRoomDaoImpl;
 import com.hiwork.dao.mariadb.CalenderDaoImpl;
 import com.hiwork.dao.mariadb.ChatDaoImpl;
 import com.hiwork.dao.mariadb.TListDaoImpl;
+import com.hiwork.dao.mariadb.VAppDaoImpl;
 import com.hiwork.dao.mariadb.VKindDaoImpl;
 import com.hiwork.dao.mariadb.WorkerDaoImpl;
 import com.hiwork.service.AuthService;
@@ -37,9 +39,11 @@ import com.hiwork.service.DefaultCRoomService;
 import com.hiwork.service.DefaultCalenderService;
 import com.hiwork.service.DefaultChatService;
 import com.hiwork.service.DefaultTListService;
+import com.hiwork.service.DefaultVAppService;
 import com.hiwork.service.DefaultVKindService;
 import com.hiwork.service.DefaultWorkerService;
 import com.hiwork.service.TListService;
+import com.hiwork.service.VAppService;
 import com.hiwork.service.VKindService;
 import com.hiwork.service.WorkerService;
 import com.hiwork.util.SqlSessionFactoryProxy;
@@ -65,7 +69,11 @@ public class DataHandlerListener implements ServletContextListener {
       TListDao tListDao = new TListDaoImpl(sqlSessionFactory);
       ChatDao chatDao = new ChatDaoImpl(sqlSessionFactory);
       VKindDao vKindDao = new VKindDaoImpl(sqlSessionFactory);
+<<<<<<< HEAD
       CalenderDao calenderDao = new CalenderDaoImpl(sqlSessionFactory);
+=======
+      VAppDao vAppDao = new VAppDaoImpl(sqlSessionFactory);
+>>>>>>> branch 'main' of https://github.com/Hl-FIVE/hi-work.git
 
       // Service 구현체 생성
       CInfoService cInfoService = new DefaultCInfoService(cInfoDao);
@@ -76,7 +84,11 @@ public class DataHandlerListener implements ServletContextListener {
       TListService tListService = new DefaultTListService(tListDao);
       ChatService chatService = new DefaultChatService(chatDao);
       VKindService vKindService = new DefaultVKindService(vKindDao);
+<<<<<<< HEAD
       CalenderService calenderService = new DefaultCalenderService(calenderDao);
+=======
+      VAppService vAppService = new DefaultVAppService(vAppDao);
+>>>>>>> branch 'main' of https://github.com/Hl-FIVE/hi-work.git
 
       ServletContext ctx = sce.getServletContext();
 
@@ -89,7 +101,11 @@ public class DataHandlerListener implements ServletContextListener {
       ctx.setAttribute("tListService", tListService);
       ctx.setAttribute("chatService", chatService);
       ctx.setAttribute("vKindService", vKindService);
+<<<<<<< HEAD
       ctx.setAttribute("calenderService", calenderService);
+=======
+      ctx.setAttribute("vAppService", vAppService);
+>>>>>>> branch 'main' of https://github.com/Hl-FIVE/hi-work.git
 
     } catch (Exception e) {
       System.out.println("Mybatis 및 DAO, 서비스 객체 준비 중 오류 발생!");

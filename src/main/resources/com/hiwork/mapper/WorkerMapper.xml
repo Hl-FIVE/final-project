@@ -33,9 +33,10 @@
 		 tel,
 		 gender,
 		 eSt
-		cms_worker
-		 order by
-		 no desc
+		from 
+		 cms_worker
+		order by
+		 wNo desc
 	</select>
 
 </mapper>

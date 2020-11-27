@@ -5,13 +5,13 @@
   
 <mapper namespace="TListDao">
   
-  <resultMap type="TList" id="TListMap">
+  <resultMap type="tList" id="tListMap">
     <id column="tCode"           property="tCode"/>
     <result column="crNo"    property="crNo"/>
     <result column="tName"    property="tName"/>
   </resultMap>
 
-  <select id="find" resultMap="TListMap">
+  <select id="find" resultMap="tListMap">
     select 
       tCode,
       crNo, 
@@ -20,12 +20,12 @@
       cms_tList
   </select>
 
-  <insert id="insert" parameterType="TList">
+  <insert id="insert" parameterType="tList">
       insert into cms_tList(tCode, crNo, tName)
       values(#{tCode}, #{crNo}, #{tName})
   </insert>
 
-  <update id="update" parameterType="TList">
+  <update id="update" parameterType="tList">
     update cms_tList set 
       tCode = #{tCode},
       crNo = #{crNo},
