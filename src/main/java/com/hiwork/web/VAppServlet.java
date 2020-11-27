@@ -45,7 +45,7 @@ public class VAppServlet extends HttpServlet {
           + "<th>휴가 신청 번호</th>"
           + "<th>휴가 코드</th>"
           + "<th>사원 번호</th>"
-          + "<th>신청일/th>"
+          + "<th>신청일</th>"
           + "<th>시작일</th>"
           + "<th>종료일</th>"
           + "<th>사용 연차일수</th>"
